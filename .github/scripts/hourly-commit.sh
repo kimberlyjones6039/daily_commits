@@ -6,9 +6,9 @@ STATE_FILE="$STATE_DIR/daily_state.json"
 LOGFILE="$STATE_DIR/commits.log"
 TODAY=$(date -u +%F)
 
-# Folosim commit author = github-actions[bot]
-git config user.name "github-actions[bot]"
-git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+# Folosim commit author = kimberlyjones6039
+git config user.name "kimberlyjones6039"
+git config user.email "mateigarcia130@gmail.com"
 
 mkdir -p "$STATE_DIR"
 
