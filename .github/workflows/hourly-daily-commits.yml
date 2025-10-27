@@ -1,0 +1,25 @@
+name: Hourly daily commits
+
+on:
+  schedule:
+    # rulează la minutul 0, o dată pe oră
+    - cron: '0 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  hourly-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Make at-most-one commit per hour
+        run: |
+          chmod +x .github/scripts/hourly-commit.sh || true
+          .github/scripts/hourly-commit.sh
+
